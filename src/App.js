@@ -1,21 +1,42 @@
+import React from "react";
+import Tickets from "./componets/Tickets";
+import Admin from "./componets/Admin";
+import Login from "./componets/Login";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+} from "react-router-dom";
+
+
+
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+        <Router>
+            <Routes>
+                <Route
+                    exact
+                    path="/"
+                    element={<Login />}
+                />
+                <Route
+                    exact
+                    path="/Admin"
+                    element={<Admin />}
+                />
+                <Route
+                    exact
+                    path="/Tickets"
+                    element={<Tickets />}
+                />
+            </Routes>
+        </Router>
+    </>
+);
+
+
 }
 
 export default App;
