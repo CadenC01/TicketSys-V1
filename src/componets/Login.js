@@ -18,11 +18,12 @@ const Login = () => {
          }
          
     }
+
     return (
         <div>
             <p>Login</p>
             <div>
-                <form name="form" onSubmit={checkAdmin}>
+                <form name="form" onSubmit={checkAdmin} id="loginForm">
                     <input id="user" placeholder="Enter Username" onChange={(e) => setUser(e.target.value)}></input>
                     <input placeholder="Enter Password" onChange={(e) => setPass(e.target.value)}></input>
                     <button>LOGIN</button>

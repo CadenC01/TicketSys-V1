@@ -2,8 +2,8 @@ import React from "react";
 import Tickets from "./componets/Tickets";
 import Admin from "./componets/Admin";
 import Login from "./componets/Login";
+import Navbar from "./componets/Navbar";
 import {
-  BrowserRouter as Router,
   Routes,
   Route,
 } from "react-router-dom";
@@ -13,8 +13,8 @@ import {
 function App() {
 
   return (
-    <>
-        <Router>
+    <div>
+        <div> <Navbar /> </div>
             <Routes>
                 <Route
                     exact
@@ -32,8 +32,8 @@ function App() {
                     element={<Tickets />}
                 />
             </Routes>
-        </Router>
-    </>
+        
+    </div>
 );
 
 
