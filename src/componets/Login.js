@@ -21,7 +21,6 @@ const Login = () => {
     /*steve was here*/
     return (
         <div>
-            <p>Login</p>
             <div>
                 <form name="form" onSubmit={checkAdmin} id="loginForm">
                     <input id="user" placeholder="Enter Username" onChange={(e) => setUser(e.target.value)}></input>

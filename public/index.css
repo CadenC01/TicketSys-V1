@@ -1,18 +1,46 @@
 * {
+ 
 }
 
-.navcont {
-  padding: 10px 20px;
+#navContainer {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+    height: 60px;
+    margin-bottom: 10px;
+    background-color: beige;
+    align-items: center;
+    justify-content: flex-end;
+    border-radius: 4px;
+    
+}
+
+#navStuff{
+  text-decoration: none;
+  width: 30%;
+  display: flex;
+  cursor: pointer;
+  justify-content: space-around;
+}
+
+li {
+  list-style-type: none;
 }
 
 #loginForm {
-  width: 300px;
-  height: 200px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 20;
+  height: 150px;
   background-color: beige;
-  text-align: center;
-  align-items: ;
-  justify-items: center;
+  justify-content: space-around;
+}
+
+button{
+  cursor: pointer;
+  background-color: rgb(255, 255, 255);
+  border-radius: 4px;
+  font-size: 14px;
+  padding: 4px 8px;
+  display: inline-block;
+
 }
