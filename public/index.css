@@ -1,8 +1,18 @@
-#loginForm{
-    width: 300px;
-    height: 200px;
-    background-color: beige;
-    text-align: center;
-    align-items: ;
-    justify-items: center;
+* {
+}
+
+.navcont {
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#loginForm {
+  width: 300px;
+  height: 200px;
+  background-color: beige;
+  text-align: center;
+  align-items: ;
+  justify-items: center;
 }
