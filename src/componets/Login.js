@@ -23,7 +23,7 @@ const Login = () => {
         <div>
             <div>
                 <form name="form" onSubmit={checkAdmin} id="loginForm">
-                    <input id="user" placeholder="Enter Username" onChange={(e) => setUser(e.target.value)}></input>
+                    <input placeholder="Enter Username" onChange={(e) => setUser(e.target.value)}></input>
                     <input placeholder="Enter Password" onChange={(e) => setPass(e.target.value)}></input>
                     <button>LOGIN</button>
                 </form>
