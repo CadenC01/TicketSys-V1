@@ -11,10 +11,10 @@ const Login = () => {
 
     function checkAdmin(){ 
         console.log(user + " " + pass);
-        if (user === "Admin" && pass === "1234") {
+        if (user === "Admin1" && pass === "Admin1Logged"|| user === "Admin2" && pass === "Admin2Logged" || user === "Admin3" && pass === "Admin3Logged") {
              navigate("/Admin");
          }else {
-            console.log("ERROR")
+            alert("incorrect password or username");
          }
          
     }
