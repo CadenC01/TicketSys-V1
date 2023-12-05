@@ -1,17 +1,13 @@
-* {
- 
-}
-
 #navContainer {
   display: flex;
   border: 2px solid #ccc;
   border-radius: 4px;
     height: 60px;
-    margin-bottom: 10px;
-    background-color: beige;
+    background-color: #E6E6FA;
     align-items: center;
     justify-content: flex-end;
     border-radius: 4px;
+    margin-bottom: 10px;
     
 }
 
@@ -28,19 +24,22 @@ li {
 }
 
 #loginForm {
+  border: 2px solid #ccc;
+  border-radius: 4px;
   display: flex;
   align-items: center;
   flex-direction: column;
   padding: 20;
   height: 150px;
-  background-color: beige;
+  background-color: #E6E6FA;
   justify-content: space-around;
 }
 
 button{
   cursor: pointer;
-  background-color: rgb(255, 255, 255);
+  border: 2px solid #ccc;
   border-radius: 4px;
+  background-color: white;
   font-size: 14px;
   padding: 4px 8px;
   display: inline-block;
