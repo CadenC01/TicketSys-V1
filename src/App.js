@@ -10,26 +10,27 @@ function App() {
   const [subject, setSubject] = useState("");
   const [issue, setIssue] = useState("");
   const [tickets, setTickets] = useState([]);
+  const [comment, setComment] = useState("");
+  const [currentAdmin, setCurrentadmin] = useState("");
 
-  const fetchPosts = async () => {
+  const fetchTickets = async () => {
     try {
       const response = await fetch(
-        `https://api-generator.retool.com/87f0k2/ticketData`
+        `https://api-generator.retool.com/NS5900/ticketApi`
       );
 
       const result = await response.json();
       setTickets(result);
-      console.log(tickets);
       return result;
     } catch (err) {
       console.error(err);
     }
   };
 
-  const makePost = async () => {
+  const makeTicket = async () => {
     try {
       const response = await fetch(
-        `https://api-generator.retool.com/87f0k2/ticketData`,
+        `https://api-generator.retool.com/NS5900/ticketApi`,
         {
           method: "POST",
           headers: {
@@ -37,8 +38,8 @@ function App() {
           },
           body: JSON.stringify({
             isOpen: true,
-            subject: subject,
-            description: issue,
+            Subject: subject,
+            Description: issue,
           }),
         }
       );
@@ -49,6 +50,30 @@ function App() {
       console.error(err);
     }
   };
+// curl -X PATCH -H 'Content-Type: application/json' -d '{"key":"value"}' https://api-generator.retool.com/kltl7H/ticketApi/1
+  const updateTicket = async (id,comment) => {
+    try {
+      const response = await fetch(
+        `https://api-generator.retool.com/NS5900/ticketApi/${id}`,
+        {
+          method: "UPDATE",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            comments: comment,
+          }),
+        }
+      );
+      const result = await response.json();
+      return result;
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+
+
 
   return (
     <div>
@@ -57,8 +82,25 @@ function App() {
         <Navbar />{" "}
       </div>
       <Routes>
-        <Route exact path="/" element={<Login />} />
-        <Route exact path="/Admin" element={<Admin />} />
+        <Route exact path="/" element={<Login setCurrentadmin={setCurrentadmin}/>} />
+        <Route 
+          exact 
+          path="/Admin" 
+          element={
+            <Admin 
+              setTickets={setTickets}
+              tickets={tickets}
+              issue={issue}
+              setIssue={setIssue}
+              subject={subject}
+              setSubject={setSubject}
+              fetchTickets={fetchTickets}
+              makeTicket={makeTicket} 
+              comment={comment}
+              setComment={setComment}
+              />
+            } 
+          />
         <Route
           exact
           path="/Tickets"
@@ -70,8 +112,8 @@ function App() {
               setIssue={setIssue}
               subject={subject}
               setSubject={setSubject}
-              makePost={makePost}
-              fetchPosts={fetchPosts}
+              fetchTickets={fetchTickets}
+              makeTicket={makeTicket}
             />
           }
         />

@@ -1,5 +1,5 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import {useEffect } from "react";
 
 const Tickets = ({
   setTickets,
@@ -8,19 +8,21 @@ const Tickets = ({
   setIssue,
   subject,
   setSubject,
-  makePost,
-  fetchPosts,
+  makeTicket,
+  fetchTickets,
 }) => {
+
   function createTicket(e) {
     e.preventDefault();
-    makePost();
-    fetchPosts();
+    makeTicket();
+    fetchTickets(); 
     alert("form submitted");
   }
 
   useEffect(() => {
-    fetchPosts();
+    fetchTickets();
   }, []);
+
 
   return (
     <div>
@@ -43,17 +45,31 @@ const Tickets = ({
           </button>
         </form>
       </div>
-      <div id="openTickets">
-        {tickets.map((item) => (
-          <div className="singleProductCont" key={item.id}>
-            <h2>{item.subject}</h2>
-            <p>{item.description}</p>
-          </div>
-        ))}
-      </div>
-      <div id="closedTickets">
-        Ticket
-        <p>{}</p>
+      <div id="ticketContain">
+        <div id="openTickets">
+        {tickets.map((item) => {
+                if (item.isOpen) {
+                    return(
+                    <div className="singleTicket" key={item.id}>
+                    <h2>{item.Subject}</h2>
+                    <p>{item.Description}</p>
+                </div> );
+                }
+            })}
+        </div>
+        <div id="closedTickets">
+            {tickets.map((item) => {
+                if (!item.isOpen) {
+                    return(
+                    <div className="singleTicket" key={item.id}>
+                    <h2>{item.Subject}</h2>
+                    <p>{item.Description}</p>
+                    <p>{item.Comments}</p>
+
+                </div> );
+                }
+            })}
+        </div>
       </div>
     </div>
   );
