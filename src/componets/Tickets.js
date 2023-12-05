@@ -1,45 +1,62 @@
-
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-const Tickets = () => {
-    const [subject, setSubject] = useState("");
-    const [issue, setIssue] = useState("");
-    const [tickets,setTicket] = useState([])
-    let arrTickets = {};
+const Tickets = ({
+  setTickets,
+  tickets,
+  issue,
+  setIssue,
+  subject,
+  setSubject,
+  makePost,
+  fetchPosts,
+}) => {
+  function createTicket(e) {
+    e.preventDefault();
+    makePost();
+    fetchPosts();
+    alert("form submitted");
+  }
 
-    const createTicket = async (e) =>{
-        
-        let ticket = {};
-        ticket.subject = subject;
-        ticket.issue = issue;
-        arrTickets.add(ticket)
-        e.preventDefault();
-        console.log(ticket)
-        console.log(arrTickets)
-    }
+  useEffect(() => {
+    fetchPosts();
+  }, []);
 
-    
-
-    return (
-        <div>
-            
-            <div id="tform">
-                <form >
-                    <input id="tsubject" name="tsubject" placeholder="Enter subject" onChange={(e) => setSubject(e.target.value)}></input>
-                    <input id="tissue" name="tissue"  placeholder="Describe issue" onChange={(e) => setIssue(e.target.value)}></input>
-                    <button type="submit" onClick={createTicket}>Submit</button>
-                </form>
-            </div>
-            <div id="openTickets">
-
-            </div>
-            <div id="closedTickets">
-                Ticket
-                <p>{arrTickets[0]}</p>
-            </div>
-        </div>
-    );
+  return (
+    <div>
+      <div id="tform">
+        <form>
+          <input
+            id="tsubject"
+            name="tsubject"
+            placeholder="Enter subject"
+            onChange={(e) => setSubject(e.target.value)}
+          ></input>
+          <input
+            id="tissue"
+            name="tissue"
+            placeholder="Describe issue"
+            onChange={(e) => setIssue(e.target.value)}
+          ></input>
+          <button type="submit" onClick={createTicket}>
+            Submit
+          </button>
+        </form>
+      </div>
+      <div id="openTickets">
+        {tickets.map((item) => (
+          <div className="singleProductCont" key={item.id}>
+            <h2>{item.subject}</h2>
+            <p>{item.description}</p>
+          </div>
+        ))}
+      </div>
+      <div id="closedTickets">
+        Ticket
+        <p>{}</p>
+      </div>
+    </div>
+  );
 };
 
 export default Tickets;
