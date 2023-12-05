@@ -12,11 +12,13 @@ function App() {
   const [tickets, setTickets] = useState([]);
   const [comment, setComment] = useState("");
   const [currentAdmin, setCurrentadmin] = useState("");
+  const [isOpen, setisOpen] = useState(null);
+  const [Id, setId] = useState("");
 
   const fetchTickets = async () => {
     try {
       const response = await fetch(
-        `https://api-generator.retool.com/NS5900/ticketApi`
+        `https://api-generator.retool.com/YS0Ke3/ticketApi`
       );
 
       const result = await response.json();
@@ -30,7 +32,7 @@ function App() {
   const makeTicket = async () => {
     try {
       const response = await fetch(
-        `https://api-generator.retool.com/NS5900/ticketApi`,
+        `https://api-generator.retool.com/YS0Ke3/ticketApi`,
         {
           method: "POST",
           headers: {
@@ -40,6 +42,7 @@ function App() {
             isOpen: true,
             Subject: subject,
             Description: issue,
+            comment: null
           }),
         }
       );
@@ -51,17 +54,19 @@ function App() {
     }
   };
 // curl -X PATCH -H 'Content-Type: application/json' -d '{"key":"value"}' https://api-generator.retool.com/kltl7H/ticketApi/1
-  const updateTicket = async (id,comment) => {
+  const updateTicket = async () => {
     try {
       const response = await fetch(
-        `https://api-generator.retool.com/NS5900/ticketApi/${id}`,
+        `https://api-generator.retool.com/YS0Ke3/ticketApi/${Id}`,
         {
-          method: "UPDATE",
+          method: "PATCH",
           headers: {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            comments: comment,
+            Comments: comment,
+            isOpen: isOpen,
+
           }),
         }
       );
@@ -98,6 +103,10 @@ function App() {
               makeTicket={makeTicket} 
               comment={comment}
               setComment={setComment}
+              isOpen={isOpen}
+              setisOpen={setisOpen}
+              updateTicket={updateTicket}
+              setId={setId}
               />
             } 
           />

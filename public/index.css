@@ -1,17 +1,18 @@
 * {
  
 }
-
+App{
+}
 #navContainer {
   display: flex;
   border: 2px solid #ccc;
   border-radius: 4px;
     height: 60px;
-    margin-bottom: 10px;
-    background-color: beige;
+    background-color: #E6E6FA;
     align-items: center;
     justify-content: flex-end;
     border-radius: 4px;
+    margin-bottom: 10px;
     
 }
 
@@ -28,19 +29,22 @@ li {
 }
 
 #loginForm {
+  border: 2px solid #ccc;
+  border-radius: 4px;
   display: flex;
   align-items: center;
   flex-direction: column;
   padding: 20;
   height: 150px;
-  background-color: beige;
+  background-color: #E6E6FA;
   justify-content: space-around;
 }
 
 button{
   cursor: pointer;
-  background-color: rgb(255, 255, 255);
+  border: 2px solid #ccc;
   border-radius: 4px;
+  background-color: white;
   font-size: 14px;
   padding: 4px 8px;
   display: inline-block;
@@ -48,7 +52,8 @@ button{
 }
 #ticketContain{
   display: flex;
-  padding: 10px;
+  padding: 10px,10px,10px,0px;
+  
   margin: 10px;
 }
 
@@ -59,12 +64,13 @@ button{
   box-sizing: border-box;
   border: 2px solid #ccc;
   border-radius: 4px;
-  background-color: beige;
+  background-color: #E6E6FA;
   font-size: 16px;
   resize: none;
 }
 
 #closedTickets{
+  flex-direction: column;
   margin: 10px;
   display: flex;
   width:50%;
@@ -72,7 +78,7 @@ button{
   box-sizing: border-box;
   border: 2px solid #ccc;
   border-radius: 4px;
-  background-color: beige;
+  background-color: #E6E6FA;
   font-size: 16px;
   resize: none;
 }
@@ -80,7 +86,8 @@ button{
 .singleTicket{
   display: flex;
   flex-direction: column;
-  border: 2px solid grey;
+  border: 2px solid #ccc;
+  border-radius: 4px;
   margin: 10px;
   padding: 10px;
 }
