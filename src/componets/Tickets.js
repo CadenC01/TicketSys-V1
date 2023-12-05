@@ -16,20 +16,18 @@ const Tickets = ({
     e.preventDefault();
     makeTicket();
     fetchTickets(); 
-    alert("Ticket created refresh page.")
-    //window.location.reload(false); 
-
+    alert("form submitted");
   }
 
   useEffect(() => {
     fetchTickets();
-  }, [fetchTickets]);
+  }, []);
 
 
   return (
     <div>
       <div id="tform">
-        <form id="loginForm">
+        <form>
           <input
             id="tsubject"
             name="tsubject"
@@ -67,7 +65,6 @@ const Tickets = ({
                     <h2>{item.Subject}</h2>
                     <p>{item.Description}</p>
                     <p>{item.Comments}</p>
-                    <p>Ticket Closed</p>
 
                 </div> );
                 }
