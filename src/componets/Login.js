@@ -22,7 +22,7 @@ const Login = () => {
   /*steve was here*/
   return (
     <div>
-      <div Adminstrator Login Page>
+      <div>
         <form name="form" onSubmit={checkAdmin} id="loginForm">
           <input
             placeholder="Enter Username"

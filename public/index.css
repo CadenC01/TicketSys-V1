@@ -2,23 +2,17 @@
  
 }
 
-body {
-  background-color: #ae8dff;
-
-}
-
 #navContainer {
   display: flex;
   border: 2px solid #ccc;
   border-radius: 4px;
     height: 60px;
     margin-bottom: 10px;
-    font-weight: 600;
-    background-color: #e3d8ff;
+    background-color: beige;
     align-items: center;
     justify-content: flex-end;
-    border-radius: 10px;;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    
 }
 
 #navStuff{
@@ -34,39 +28,24 @@ li {
 }
 
 #loginForm {
-    width: 60%;
-    max-width: 400px; 
-    margin: auto; 
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    padding: 20px; 
-    height: 150px; 
-    background-color: #e3d8ff;
-    justify-content: space-around;
-    border-radius: 10px; 
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
-  }
-  
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 20;
+  height: 150px;
+  background-color: beige;
+  justify-content: space-around;
+}
 
-button{ 
-  display: inline-block;
-  outline: 0;
-  border: none;
+button{
   cursor: pointer;
-  font-weight: 600;
+  background-color: rgb(255, 255, 255);
   border-radius: 4px;
-  font-size: 13px;
-  height: 30px;
-  background-color: #9147ff;
-  color: white;
-  padding: 0 20px;
-}
+  font-size: 14px;
+  padding: 4px 8px;
+  display: inline-block;
 
-button:hover {
-  background-color: #772ce8;
 }
-
 #ticketContain{
   display: flex;
   padding: 10px;
