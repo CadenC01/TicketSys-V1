@@ -12,13 +12,12 @@ const Tickets = ({
   fetchTickets,
 }) => {
 
-  function createTicket(e) {
+  const createTicket = async(e) => {
     e.preventDefault();
     makeTicket();
     fetchTickets(); 
     alert("Ticket created refresh page.")
     //window.location.reload(false); 
-
   }
 
   useEffect(() => {
