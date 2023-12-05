@@ -11,7 +11,7 @@ const Admin = ({tickets, fetchTickets,setComment,setisOpen,comment,isOpen,update
         e.preventDefault();
         updateTicket();
         fetchTickets(); 
-        alert("Ticket updated refresh page.")
+        alert("Ticket updated.")
         //window.location.reload(false);
     };
 

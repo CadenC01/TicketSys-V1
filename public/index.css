@@ -58,7 +58,7 @@ button{
   box-sizing: border-box;
   border: 2px solid #ccc;
   border-radius: 4px;
-  background-color: beige;
+  background-color: #E6E6FA;
   font-size: 16px;
   resize: none;
 }
@@ -71,9 +71,10 @@ button{
   box-sizing: border-box;
   border: 2px solid #ccc;
   border-radius: 4px;
-  background-color: beige;
+  background-color: #E6E6FA;
   font-size: 16px;
   resize: none;
+  flex-direction: column;
 }
 
 .singleTicket{

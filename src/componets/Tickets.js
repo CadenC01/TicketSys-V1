@@ -16,7 +16,7 @@ const Tickets = ({
     e.preventDefault();
     makeTicket();
     fetchTickets(); 
-    alert("Ticket created refresh page.")
+    alert("Ticket created.")
     //window.location.reload(false); 
   }
 
