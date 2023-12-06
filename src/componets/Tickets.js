@@ -12,7 +12,7 @@ const Tickets = ({
   fetchTickets,
 }) => {
 
-  function createTicket(e) {
+  const createTicket = async(e) => {
     e.preventDefault();
     makeTicket();
     fetchTickets(); 
